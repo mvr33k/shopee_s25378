@@ -35,7 +35,22 @@ public class ShopServiceIntegrationTest {
         assertThat(shopService.isProductInStorage("piwo")).isTrue();
     }
 
-//    shouldNot
+    void shouldNotOrder(){
+        Client client=new Client(0);
+        ShopProduct product1=new ShopProduct("piwo",2.50);
+        List<ShopProduct> productList=new ArrayList<>();
+        productList.add(product1);
+        Cart cart=new Cart(client);
+        cart.addProduct("piwo");
+
+        when(shopStorage.getAll()).thenReturn(productList);
+
+
+
+        shopService.orderItems(cart);
+
+        assertThat(cart.getStatus().equals(Satus.OK));
+    }
 
 
 }
