@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ShopeeS25378Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ShopeeS25378Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ShopeeS25378Application.class, args);
+    }
 
 }
