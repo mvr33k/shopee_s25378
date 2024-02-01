@@ -12,7 +12,7 @@ public class ShopService {
     private Cart cart;
     private final ShopStorage shopStorage;
 
-    public void orderItems(Cart cart){
+    public Satus orderItems(Cart cart){
 
         for (String s : cart.getProducts()){
             if (isProductInStorage(s)){
@@ -22,8 +22,13 @@ public class ShopService {
 
             if (cart.getPrice()<=cart.getClientSaldo()){
                 cart.setClientSaldo(cart.getPrice());
+                cart.setStatus(Satus.OK);
+            }
+            else{
+                cart.setStatus(Satus.ERR);
             }
         }
+        return cart.getStatus();
     }
 
     public boolean isProductInStorage(String product){

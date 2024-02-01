@@ -9,6 +9,10 @@ import java.util.Optional;
 @Component
 public class ShopStorage {
 
+    ShopStorage(){
+        products.add(new ShopProduct("piwo",2.50));
+        products.add(new ShopProduct("mleko",3.00));
+    }
     private List<ShopProduct> products = new ArrayList<>();
 
     public void addProduct(ShopProduct product) {

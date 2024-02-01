@@ -37,7 +37,12 @@ public class Cart {
     public List<String> getProducts(){
         return products;
     }
+    private Satus status=Satus.NEW;
+    public void setStatus(Satus status){
+        this.status=status;
+    }
 
-
-
+    public Satus getStatus() {
+        return status;
+    }
 }
